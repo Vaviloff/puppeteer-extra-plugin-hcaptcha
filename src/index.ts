@@ -18,14 +18,14 @@ export const BuiltinSolutionProviders: types.SolutionProvider[] = [
  * A puppeteer-extra plugin to automatically detect and solve reCAPTCHAs.
  * @noInheritDoc
  */
-export class PuppeteerExtraPluginRecaptcha extends PuppeteerExtraPlugin {
+export class PuppeteerExtraPluginHcaptcha extends PuppeteerExtraPlugin {
   constructor(opts: Partial<types.PluginOptions>) {
     super(opts)
     this.debug('Initialized', this.opts)
   }
 
   get name() {
-    return 'recaptcha'
+    return 'hcaptcha'
   }
 
   get defaults(): types.PluginOptions {
@@ -121,7 +121,7 @@ export class PuppeteerExtraPluginRecaptcha extends PuppeteerExtraPlugin {
     this.debug('getRecaptchaSolutions', response)
     if (response && response.error) {
       console.warn(
-        'PuppeteerExtraPluginRecaptcha: An error occured during "getRecaptchaSolutions":',
+        'PuppeteerExtraPluginHcaptcha: An error occured during "getRecaptchaSolutions":',
         response.error
       )
     }
@@ -230,9 +230,9 @@ export class PuppeteerExtraPluginRecaptcha extends PuppeteerExtraPlugin {
   }
 }
 
-/** Default export, PuppeteerExtraPluginRecaptcha  */
+/** Default export, PuppeteerExtraPluginHcaptcha  */
 const defaultExport = (options?: Partial<types.PluginOptions>) => {
-  return new PuppeteerExtraPluginRecaptcha(options || {})
+  return new PuppeteerExtraPluginHcaptcha(options || {})
 }
 
 export default defaultExport

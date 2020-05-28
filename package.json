@@ -1,7 +1,7 @@
 {
-  "name": "@nsourov/puppeteer-extra-plugin-recaptcha",
+  "name": "puppeteer-extra-plugin-hecaptcha",
   "version": "4.0.1",
-  "description": "A puppeteer-extra plugin to solve reCAPTCHAs automatically.",
+  "description": "A puppeteer-extra plugin to solve hCAPTCHAs automatically.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
@@ -10,9 +10,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nsourov/puppeteer-extra-plugin-recaptcha"
+    "url": "git+https://github.com/vaviloff/puppeteer-extra-plugin-hcaptcha"
   },
-  "homepage": "https://github.com/nsourov/puppeteer-extra-plugin-recaptcha",
+  "homepage": "https://github.com/vaviloff/puppeteer-extra-plugin-hcaptcha",
   "author": "Naimur",
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,7 @@
     "build": "yarn clean && tsc --module commonjs && rollup -c rollup.config.ts && yarn ambient-dts",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ava -v src/**.test.ts",
     "ambient-dts": "yarn ambient-dts-copy && yarn ambient-dts-fix-path",
-    "ambient-dts-copy": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
+    "ambient-dts-copy": "copyfiles -u 1 \"./src/**/*.d.ts\" dist",
     "ambient-dts-fix-path": "replace-in-files --string='/// <reference path=\"../src/' --replacement='/// <reference path=\"../dist/' 'dist/**/*.d.ts'",
     "prepublishOnly": "npm run build"
   },
@@ -56,7 +56,7 @@
     "@types/node": "^10.12.23",
     "@types/puppeteer": "^1.12.1",
     "ava": "^1.2.1",
-    "copyfiles": "^2.1.1",
+    "copyfiles": "^2.3.0",
     "lodash.camelcase": "^4.3.0",
     "puppeteer-extra": "^2.1.3",
     "replace-in-files-cli": "^0.3.0",
@@ -80,6 +80,6 @@
     "puppeteer-extra-plugin": "^3.0.4"
   },
   "bugs": {
-    "url": "https://github.com/nsourov/puppeteer-extra-plugin-recaptcha/issues"
+    "url": "https://github.com/vaviloff/puppeteer-extra-plugin-hcaptcha/issues"
   }
 }
